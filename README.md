@@ -50,3 +50,9 @@ src/
 |---|---|---|
 | `POST` | `/api/licenses` | Create a license (`customerEmail` required) |
 | `POST` | `/api/webhooks/keymint` | Receive Keymint webhook events |
+
+## Links
+
+- [Keymint — Software Licensing API](https://keymint.dev)
+- [Keymint API docs](https://docs.keymint.dev)
+- [Keymint Dashboard](https://app.keymint.dev)
