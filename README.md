@@ -19,11 +19,12 @@ Copy `.env.example` to `.env.local` and set:
 | `KEYMINT_ADMIN_API_KEY` | Admin API key (server-side license management) |
 | `KEYMINT_CLIENT_API_KEY` | Client API key (activation/validation) |
 | `KEYMINT_PRODUCT_ID` | Your product ID |
-| `KEYMINT_WEBHOOK_SECRET` | Webhook signing secret |
+| `KEYMINT_WEBHOOK_SECRET` | Webhook signing secret (the webhook route refuses requests until it is set) |
+| `LICENSE_API_SECRET` | Shared secret for `POST /api/licenses` (the route refuses requests until it is set). Generate with `openssl rand -hex 32` |
 
 ## What's Included
 
-- **License API route** — `POST /api/licenses` to create licenses with customer details
+- **License API route** — `POST /api/licenses` to create licenses with customer details. It uses your **admin** key, so it requires `Authorization: Bearer $LICENSE_API_SECRET` and is meant to be called from your own backend. In production, create licenses from your payment provider's webhook after a successful checkout instead of exposing this route.
 - **Webhook receiver** — `POST /api/webhooks/keymint` with HMAC-SHA256 signature verification
 - **License service** — create, block, unblock, query, and validate licenses
 - **Dashboard page** — `/dashboard/licenses` with setup instructions
@@ -48,7 +49,7 @@ src/
 
 | Method | Path | Description |
 |---|---|---|
-| `POST` | `/api/licenses` | Create a license (`customerEmail` required) |
+| `POST` | `/api/licenses` | Create a license (`customerEmail` required; `Authorization: Bearer $LICENSE_API_SECRET`) |
 | `POST` | `/api/webhooks/keymint` | Receive Keymint webhook events |
 
 ## Links
