@@ -10,7 +10,7 @@ export default function LicensesPage() {
         <ul style={{ marginTop: '0.5rem', paddingLeft: '1.25rem' }}>
           <li>Create a product in the <a href="https://app.keymint.dev" style={{ color: '#2563eb' }}>Keymint Dashboard</a></li>
           <li>Set your <code>KEYMINT_PRODUCT_ID</code> in <code>.env.local</code></li>
-          <li>POST to <code>/api/licenses</code> to create a license</li>
+          <li>Set <code>LICENSE_API_SECRET</code>, then POST to <code>/api/licenses</code> from your backend with <code>Authorization: Bearer &lt;secret&gt;</code></li>
           <li>Configure Keymint webhooks to point to <code>/api/webhooks/keymint</code></li>
         </ul>
       </div>
