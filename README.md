@@ -19,7 +19,7 @@ Copy `.env.example` to `.env.local` and set:
 | `KEYMINT_ADMIN_API_KEY` | Admin API key (server-side license management) |
 | `KEYMINT_CLIENT_API_KEY` | Client API key (activation/validation) |
 | `KEYMINT_PRODUCT_ID` | Your product ID |
-| `KEYMINT_WEBHOOK_SECRET` | Webhook signing secret (the webhook route refuses requests until it is set) |
+| `KEYMINT_WEBHOOK_SECRET` | Webhook signing secret: 64 hex characters, no prefix (the webhook route refuses requests until it is set) |
 | `LICENSE_API_SECRET` | Shared secret for `POST /api/licenses` (the route refuses requests until it is set). Generate with `openssl rand -hex 32` |
 
 ## What's Included
