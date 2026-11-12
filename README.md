@@ -55,5 +55,5 @@ src/
 ## Links
 
 - [Keymint — Software Licensing API](https://keymint.dev)
-- [Keymint API docs](https://docs.keymint.dev)
+- [Keymint API docs](https://keymint.dev/docs)
 - [Keymint Dashboard](https://app.keymint.dev)
